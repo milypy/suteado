@@ -1,7 +1,7 @@
-from suteado import Suteado
+from suteado import suteado as st
 
 #インスタンスの作成 セッションハッシュは指定しなくても一応通るけど非推奨
-mail = Suteado.SuteAddress("SHASH%3ABCDEFGHIJK1234567890")
+mail = st.SuteAddress("SHASH%3ABCDEFGHIJK1234567890")
 
 #メールの作成(アドレス名の指定無し)
 print(mail.create_Mail("eay.jp"))
