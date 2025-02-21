@@ -14,6 +14,33 @@ class SuteAddress():
         cookie = {"cookie_sessionhash":self.hash}
         response = session.get(f"https://m.kuku.lu/index.php",headers=self.headers,cookies=cookie)
         return response.cookies.get_dict()["cookie_csrf_token"]
+    
+    def login(self,id,password):
+        session = requests.session()
+        response = session.get("https://m.kuku.lu/ja.php",headers=self.headers)
+        hash = response.cookies.get_dict()["cookie_sessionhash"]
+        csrf_token = response.cookies.get_dict()["cookie_csrf_token"]
+        data = {
+        "action": "checkLogin",
+        "confirmcode": "",
+        "nopost": "1",
+        "csrf_token_check": csrf_token,
+        "csrf_subtoken_check": "",
+        "number": id,
+        "password": password,
+        "syncconfirm": ""}
+        req = session.post("https://m.kuku.lu/index.php",headers=self.headers,cookies={"cookie_sessionhash":hash,"cookie_csrf_token": csrf_token},data=data)
+        data2 = {
+        "action": "checkLogin",
+        "confirmcode": "",
+        "nopost": "1",
+        "csrf_token_check": csrf_token,
+        "csrf_subtoken_check": "",
+        "number": id,
+        "password": password,
+        "syncconfirm": "yes"}
+        req = session.post("https://m.kuku.lu/index.php",headers=self.headers,cookies={"cookie_sessionhash":hash,"cookie_csrf_token": csrf_token},data=data2)
+        return req.text.replace("OK:SHASH:","SHASH%3A")
 
     def create_Mail(self,domain,address=None):
         session = requests.Session()
