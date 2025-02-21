@@ -7,7 +7,7 @@ pip install suteado
 サンプルコード
 
 ```
-import Suteado
+from suteado import Suteado
 
 #インスタンスの作成 セッションハッシュは指定しなくても一応通るけどその度に新しいアカウントになる
 mail = Suteado.SuteAddress("SHASH%3ABCDEFGHIJK1234567890")
