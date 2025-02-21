@@ -1,5 +1,5 @@
 # suteado
-m.kuku.luで使える捨てアドぽいぽいの自動化
+捨てアドぽいぽい(m.kuku.lu)の非公式API
 ```
 pip install suteado
 ```
