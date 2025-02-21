@@ -4,6 +4,14 @@
 pip install suteado
 ```
 
+使い方
+```
+from suteado import suteado as st
+
+mail = st.SuteAddress("<あなたのセッションハッシュ>")
+print(mail.create_Mail("eay.jp")
+```
+
 サンプルコード
 
 ```
