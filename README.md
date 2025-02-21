@@ -21,4 +21,4 @@ print(mail.get_mailbox(3))
 ```
 
 セッションハッシュはサイトのcookieのSessionHashみたいな名前のやつです。
-chromeだったら使いたいアカウントにログインして右クリック → 検証 → Application → StorageのCookies → https://m.kuku.lu/のcookie_sessionhashに格納されてる値をコピーすれば使えます。
+chromeだったら使いたいアカウントにログインして右クリック → 検証 → Application → StorageのCookies → https://m.kuku.lu/ のcookie_sessionhashに格納されてる値をコピーすれば使えます。
