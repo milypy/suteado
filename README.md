@@ -1,16 +1,21 @@
 # suteado
 m.kuku.luで使える捨てアドぽいぽいの自動化
+```
+pip install suteado
+```
+
+サンプルコード
 
 ```
 import Suteado as suteado
 
-#インスタンスの作成 セッションハッシュは指定しなくても一応通るけど非推奨
+#インスタンスの作成 セッションハッシュは指定しなくても一応通るけどその度に新しいアカウントになる
 mail = suteado.SuteAddress("SHASH%3ABCDEFGHIJK1234567890")
 
 #メールの作成(アドレス名の指定無し)
 print(mail.create_Mail("eay.jp"))
 
-#メールの作成(アドレス名の指定あり) 下の場合:abcdefg@eay.jpが作成される
+#メールの作成(アドレス名の指定あり) この場合:abcdefg@eay.jpが作成される
 print(mail.create_Mail("eay.jp","abcdefg1234"))
 
 #指定したセッションハッシュのアカウントに登録されているすべてのメールの取得
@@ -18,6 +23,10 @@ print(mail.get_AllAddress())
 
 #メールボックスの確認 整数で因数を指定して最新のものから数個取得も出来る
 print(mail.get_mailbox(3))
+
+#ログイン情報からセッションハッシュを抽出する ログイン情報はあなたのユーザー情報→使用中のアカウント情報
+print(mail.login(450569192000,"iawgopisnavoi")
+
 ```
 
 セッションハッシュはサイトのcookieのSessionHashみたいな名前のやつです。
